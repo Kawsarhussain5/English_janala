@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English janala</title>
+    <link rel="shortcut icon" href="/assets/logo.png" type="image/x-icon">
+
+    <!--daisyUi_url_link-->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<!--fontawsome_url_link-->
+<script src="https://kit.fontawesome.com/00998b675a.js" crossorigin="anonymous"></script>
+
+<!--google font link-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
+
+
+<!--some row css-->
+<style>
+  .active{
+    background-color: #422AD5;
+    color: white;
+  }
+
+  .poppins {
+  font-family: "Poppins", sans-serif;
+}
+.tiro-bangla {
+  font-family: "Tiro Bangla", serif;
+}
+.hind-siliguri {
+  font-family: "Hind Siliguri", sans-serif;
+}
+  
+</style>
+</head>
+<body>
+
+        <!--header section
+        
+        fixed z-50  w-full  backdrop-blur-sm shadow-md transition-all-->
+    <header>
+        <!--nav-section-->
+        <section class="hidden">
+          <nav id="navbar" class=" fixed z-50 top-0 left-0 w-full  bg-transparent shadow-lg ">
+            <div class="navbar bg-base-100 shadow-sm">
+                <div class="flex-1 ">
+                  <h1 class="flex flex-row  items-center poppins">English <img src="assets/logo.png" alt=""><span class="tiro-bangla">জানালা</span></h1>
+                </div>
+                <div class="flex-none">
+                  <ul class="menu menu-horizontal px-1 gap-6">
+                    <li><a id="btn-faq" href="#faq-section" class="btn btn-outline btn-primary poppins"><img src="assets/fa-circle-question.png" alt="">FAQ</a></li>
+                    <li><a onclick="smoothScroll('lode-categories')"  href="#lode-categories" class="btn btn-outline btn-primary poppins"><img src="assets/fa-book-open.png" alt="">Learn</a></li>
+                    <li><a href="" class="btn btn-outline btn-primary poppins"><img src="assets/fa-arrow-right-from-bracket.png" alt="">Logout</a></li>
+                  </ul>
+                </div>
+              </div>
+        </nav>
+        </section>
+        <!--benner section-->
+        <section id='bennar_section' class="banner-container w-11/12 mx-auto flex justify-center items-center justify-center items-center  ">
+            <div class="banner-heading w-2/4 flex flex-col justify-center  gap-10">
+                <h1 class=" text-4xl font-bold py-10 poppins"><span class="text-[#00BCFF]">English</span> is Easy!!</h1>
+                <p class="w-11/12 text-2xl font-medium text-gray-500 hind-siliguri">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
+
+                <label class="floating-label">
+                    <span class="poppins">Enter Your Name</span>
+                    <input id="enter-name" type="text" placeholder="Enter Your Name" class="input input-md" />
+                  </label>
+
+                  <label class="floating-label">
+                    <span class="poppins">Enter Your Login code (123456)</span>
+                    <input id="inter-pass" type="text" placeholder="Enter Your Login code (123456)" class="input input-md" />
+                  </label>
+                  <div><button id="login-btn" class="btn btn-primary poppins">Get Started</button>
+                </div>
+            </div>
+
+            <div class="banner-img">
+                <img src="/assets/hero-student.png" alt="">
+            </div>
+
+
+        </section>
+    </header>
+    
+    <!--Let's Learn Vocabularies section-->
+   <section id="lode-categories" class="hidden">
+    <h1 class="text-4xl font-bold text-center py-10 mt-24 "><span class="text-[#00BCFF]">Let's</span> Learn Vocabularies</h1>
+    
+
+    <!--daynamic btm div-->
+    <div id="lode-categories-btn" class="flex items-center justify-center gap-10 py-10">
+ </div>
+
+<!--loderspeen section-->
+<div id="loderspeen" class=" text-center py-10 hidden">
+  <span class="loading loading-bars loading-xs"></span>
+<span class="loading loading-bars loading-sm"></span>
+<span class="loading loading-bars loading-md"></span>
+<span class="loading loading-bars loading-lg"></span>
+<span class="loading loading-bars loading-xl"></span>
+</div>
+
+ <!--daynamic card div-->
+    <div id="words-card-div" class="grid grid-cols-3 justify-center items-center gap-10 w-11/12 mx-auto bg-gray-100 rounded-lg">
+
+    </div>
+
+  </div>
+
+  <div id="empty-error" class="empty-error w-11/12 mx-auto bg-[#F8F8F8] py-20 rounded-sm flex flex-col justify-center items-center gap-7 ">
+    <p class="text-sm text-gray-500 hind-siliguri">আপনি এখনো কোন Lesson Select করেন</p>
+    <h1 class="text-4xl font-semibold hind-siliguri">একটি Lesson Select করুন।</h1>
+  </div>
+  
+    
+
+   </section>
+
+
+        <!--Frequently Asked Questions section-->
+      <section id="faq-section" class="hidden poppins mt-24">
+        <h1 class="faq-heading font- text-4xl font-bold text-center py-10 poppins "><span class="text-[#00BCFF]">Frequently</span> Asked Questions</h1>
+        <div class="faq-bar w-11/12 mx-auto py-11">
+            <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                <input type="radio" name="my-accordion-3" checked="checked" />
+                <div class="collapse-title text-lg font-semibold"> The difference between var, let, and const</div>
+                <div class="collapse-content text-sm">1.var is function-scoped, while let and const are block-scoped, meaning they are only accessible within the block where they are defined. <br>
+                2.let and const help prevent accidental redeclaration and provide better scoping than var, reducing potential bugs. <br>
+                3.const is used for values that should not change, while let is preferred for variables that may be updated later.
+                </div>
+              </div>
+              <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-semibold">The difference between map(), forEach(), and filter()</div>
+                <div class="collapse-content text-sm">1.map() creates a new array by applying a function to each element, returning a modified version of the original array. <br>
+                2.forEach() executes a function on each array element but does not return a new array; it simply iterates over the elements. <br>
+            3.filter() creates a new array containing only the elements that pass a specified condition.</div>
+              </div>
+              <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-semibold"> Explain arrow functions and how they are different from regular functions</div>
+                <div class="collapse-content text-sm">Arrow functions are a concise way to write functions in JavaScript using the => syntax. They provide a shorter and more readable alternative to regular function expressions.</div>
+              </div>
+              <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-semibold">How JavaScript Promises work</div>
+                <div class="collapse-content text-sm">A Promise in JavaScript is an object that represents the eventual completion (or failure) of an asynchronous operation. It allows handling asynchronous code more efficiently than using callbacks.
+
+                </div>
+              </div>
+              <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-semibold">
+                    how closures work in JavaScript</div>
+                <div class="collapse-content text-sm">A closure is a function that retains access to variables from its lexical scope (the scope where it was created) even after the outer function has finished executing..</div>
+              </div>
+        </div>
+    </section>
+  
+
+    <!--footer_section-->
+    <footer id="footer" class="w-11/12 mx-auto footer border-red-200 border-t mt-20  py-20">
+       
+         <div class="footer-heading px-4">
+            <h1 class="flex flex-row poppins text-2xl">
+                English <img src="assets/logo.png" alt=""><span class="tiro-bangla">জানালা</span> 
+              </h1>
+               <p class="hind-siliguri text-xl">ইংরেজি শিখুন সহজে</p>
+               <p class="hind-siliguri text-lg">Providing ED-Tech Applications since 2025</p>
+         </div>
+        <div class="md:place-self-center md:justify-self-end">
+          <h1 class="text-2xl font-extrabold poppins text-gray-400">Follow us</h1>
+          <div class="grid grid-flow-col gap-4">
+           <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook text-3xl text-gray-600"></i></a>
+            <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube text-3xl text-gray-600"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram text-3xl text-gray-600"></i></a>
+            <a href="https://github.com/dashboard" target="_blank"><i class="fa-brands fa-github text-3xl text-gray-600"></i></a>
+          </div>
+        </div>
+      </footer>
+
+
+
+
+
+
+
+
+     <!--
+       <section class="w-11/12 mx-auto bg-[#F8F8F8] py-20 rounded-sm flex flex-col justify-center items-center gap-7 mt-11">
+        <img src="assets/alert-error.png" alt="">
+        <p class="text-sm text-gray-500">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+        <h1 class="text-4xl font-semibold">নেক্সট Lesson এ যান</h1>
+      </section>
+      -->
+      <!--login modeal-->
+      <dialog id="my_modal_1" class="modal">
+        <div class="modal-box flex justify-center items-center gap-6 flex-col">
+          <h3 class="text-5xl font-extrabold text-center">Congrates!</h3>
+          <p class="text-xl font-semibold">Your Login</p>
+          <p class="text-4xl font-bold">Successfully Done</p>
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button  class="btn">Thank you</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+      
+<!-- woedDetalse modal-->
+      <dialog id="word_details" class="modal">
+        <div class="modal-box ">
+          <div id="word-details-container">
+
+          </div>
+         
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button  class="btn btn-primary">Complete Learning</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+
+      <!--js link-->
+      <script src="index.js"></script>
+      <!--<script src="login.js"></script>-->
+      
+
+
+ 
+      
+     
+      
+</body>
+</html>
